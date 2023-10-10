@@ -1,0 +1,207 @@
+.friends {
+	background-color: var(--primary-color-light-l);
+
+	&__content {
+		padding: 80px 40px 100px 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		@media (max-width: 768px) {
+			padding-bottom: 76px;
+		}
+
+		@media (max-width: 400px) {
+			padding: 40px 10px 45px 10px;
+		}
+	}
+
+	&__title {
+		color: var(--text-color-dark-1);
+		@include font(var(--font-georgia), 400, normal);
+		font-size: 35px;
+		line-height: 130%;
+		letter-spacing: 0.06em;
+		text-align: center;
+		@media (max-width: 500px) {
+			font-size: calc(25px + (30 - 25) * ((100vw - 320px) / (500 - 320)));
+		}
+
+		@media (max-width: 320px) {
+			font-size: 25px;
+
+		}
+	}
+
+	&__slider {
+		margin-top: 60px;
+		width: 100%;
+		position: relative;
+		@media (max-width: 768px) {
+			margin-top: 30px;
+		}
+
+		@media (max-width: 320px) {
+			margin-top: 40px;
+		}
+	}
+	&__button {
+		margin-top: 60px;
+		position: relative;
+		display: flex;
+        gap: 20px;
+        justify-content: center;
+		@media (max-width: 768px) {
+			margin-top: 40px;
+		}
+		@media (max-width: 500px) {
+			gap: 13px;
+		}
+		@media (max-width: 320px) {
+			margin-top: 45px;
+		}
+
+		@media (max-width: 319px) {
+			gap: 10px;
+		}
+
+	}
+}
+
+.slider {
+
+	&__body {
+		display: flex;
+		justify-content: center;
+		gap: 30px 40px;
+		flex-wrap: wrap;
+	}
+
+
+	&__card {
+		width: 270px;
+		height: 435px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--text-color-light-s);
+		cursor: pointer;
+
+
+	}
+
+	&__card:hover {
+		background-color: var(--primary-color-light-xl);
+        transition: all 0.25s;
+        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+	}
+
+    &__card:hover > div > button {
+        transition: all 0.25s;
+        background-color: var(--primary-ligth) !important;
+        border: none !important;
+	}
+}
+.card {
+
+	&__image {
+		width: 270px;
+		height: 270px;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	// .card__name
+
+	&__name {
+		margin-top: 30px;
+		@include font(var(--font-georgia), 400, normal);
+		font-size: 20px;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+
+		@media (max-width: 320px) {
+			margin-top: 35px;
+		}
+	}
+
+	&__button {
+		button {
+			@include font(var(--font-georgia), 400, normal);
+            border: 2px solid var(--primary);
+            background-color: inherit;
+			color: var(--text-color-dark-3xl);
+			font-size: 17px;
+			line-height: 22px;
+			letter-spacing: 0.06em;
+			width: 100%;
+			height: 100%;
+			border-radius: 100px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			width: 190px;
+			height: 50px;
+
+			@media (max-width: 320px) {
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+.button {
+	&__pagination {
+		height: 50px;
+		width: 50px;
+		border-radius: 100%;
+	    display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid var(--primary-ligth);
+		background-color: inherit;
+        color: var(--text-color-dark-3xl);
+        @include font(var(--font-georgia), 400, normal);
+        font-size: 20px;
+        line-height: 115%;
+		span{
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		&:hover {
+			background-color: var(--primary-ligth);
+			border: none;
+			transition: all 0.3s ease 0s;
+		}
+
+
+		&_center{
+			background-color: var(--primary);
+			border: 2px solid var(--primary);
+			cursor: default;
+			&:hover{
+				background-color: var(--primary);
+			}
+		}
+
+	}
+
+	&__pagination:disabled{
+		border: 2px solid var(--text-color-dark-s);
+		color: var(--text-color-dark-s);
+		background-color: inherit;
+		cursor: default;
+		&:hover{
+			border: 2px solid var(--text-color-dark-s);
+			color: var(--text-color-dark-s);
+			background-color: inherit;
+		}
+	}
+}

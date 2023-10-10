@@ -1,0 +1,86 @@
+//^ Файл обнуляющих стилей
+@import "nullstyle";
+
+//^ Файл миксинов
+@import "mixin";
+
+//^ Подключение ширфтов
+@import "fonts";
+
+//^ Файлы стилей страниц
+@import "header";
+@import "./main/main";
+@import "footer";
+@import "modal";
+
+
+body, html{
+    width: 100%;
+    height: 100%;
+    @include font( var(--font-arial), 500, normal);
+    scroll-behavior: smooth;
+}
+
+body.active{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.wrapper{
+  overflow: hidden;
+  display: flex; 
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main{
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+[class*="__container"] {
+  max-width: 1280px;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    max-width: calc(320px + (768 - 320) * ((100vw - 320px) / (768 - 320)));
+  }
+  @media (max-width: 320px) {
+    max-width: 320px;
+  }
+}
+
+[class*="__button"] {
+  > button{
+      @include font(var(--font-georgia), 400, normal);
+      background-color: var(--primary);
+      color: var(--text-color-dark-3xl);
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: 0.06em;
+      width: 100%;
+      height: 100%;
+      border-radius: 100px;   
+  }
+  > button:hover{
+      background-color: var(--primary-ligth);
+      transition: all 0.3s ease 0s;
+  }
+}
+
+:root{
+  --primary: #F1CDB3;
+  --primary-ligth: #FDDCC4;
+  --primary-color-light-xl: #FFFFFF;
+  --primary-color-light-l: #F6F6F6;
+  --text-color-dark-1: #545454;
+  --text-color-dark-xl: #4C4C4C;
+  --text-color-dark-s: #CDCDCD;
+  --text-color-dark-m:#B2B2B2;
+  --text-color-dark-3xl:#292929;
+  --text-color-light-s: #FAFAFA;
+  --font-arial: Arial;
+  --font-georgia: Georgia;
+}
+
+
+
